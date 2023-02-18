@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#3083DC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#7DDE92</color>
+    <color name="teal_700">#2EBFA5</color>
+    <color name="black">#4E4187</color>
+    <color name="white">#F8FFE5</color>
+    <color name="cardview_initial_background">#71C3DE</color>
+    <color name="transparent">#00000000</color>
+</resources>

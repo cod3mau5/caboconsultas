@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuActivity"
+    tools:locale="es"
+    android:padding="11dp"
+    tools:ignore="Autofill,LabelFor"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/label_titulo_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+        <Button
+            android:id="@+id/btnCreateAppointment"
+            android:text="@string/menu_boton_crear_cita"
+            android:drawableEnd="@drawable/ic_cita"
+            style="@style/MenuButton"
+            />
+        <Button
+            android:id="@+id/btnMyAppointments"
+            android:text="@string/menu_mis_citas"
+            android:drawableEnd="@drawable/ic_baseline_book_24"
+            style="@style/MenuButton"
+            />
+        <Button
+            android:id="@+id/btnLogOut"
+            android:text="@string/menu_boton_cerrar_session"
+            android:drawableEnd="@drawable/ic_power_off"
+            style="@style/MenuButton"
+            />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_nombre">caboconsultas</string>
+    <string name="label_nombre">Nombre completo</string>
+    <string name="label_correo">Correo electronico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="login_boton_entrar">Ingresar</string>
+    <string name="login_texto_no_registrado">Aun no te has registrado?</string>
+    <string name="login_texto_ya_registrado">Y tienes cuenta? click aqui.</string>
+    <string name="toast_completa_tus_datos">Por favor, completa tus datos</string>
+    <string name="menu_mis_citas">Mis citas</string>
+    <string name="label_clave">Contraseña</string>
+    <string name="label_registro">Registrate</string>
+    <string name="menu_boton_crear_cita">Reservar cita</string>
+    <string name="login_boton_registrar">Registrate</string>
+    <string name="menu_boton_cerrar_session">Cerrar Sesión</string>
+    <string name="label_titulo_menu">Bienvenido</string>
+    <string name="label_titulo_crear_cita">Reservar cita</string>
+    <string name="label_descripcion">Descripcion</string>
+    <string name="label_especialidad">Especialidad</string>
+    <string name="label_type">Tipo de cita</string>
+    <string name="tipo_cita_1">Consulta</string>
+    <string name="tipo_cita_2">Examen</string>
+    <string name="tipo_cita_3">Operacion</string>
+    <string name="btn_siguiente">Siguiente</string>
+    <string name="label_medico">Medico</string>
+    <string name="label_fecha_reservada">Fecha para la cita</string>
+    <string name="btn_confirmar">Confirmar</string>
+    <string name="date_format">%1$d-%2$s-%3$s</string>
+    <string name="item_appointment_id">Cita médica #%1$d</string>
+    <string name="item_appointment_date">Atención el dia %1$s</string>
+    <string name="item_appointment_time">A las %1$s</string>
+    <string name="label_mis_citas_medicas">Mis Citas Médicas</string>
+</resources>

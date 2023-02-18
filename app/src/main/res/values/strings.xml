@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">caboconsults</string>
+    <string name="label_name">Full name</string>
+    <string name="label_e_mail">E-mail</string>
+    <string name="label_pass">Password</string>
+    <string name="label_register">Register</string>
+    <string name="login_button_register">Register</string>
+    <string name="login_tex_registered_user">You have account? click here.</string>
+    <string name="menu_my_appointments">My Appointments</string>
+
+    <string name="cardview_contents">This is a CardView widget. CardView widgets can have
+        shadows and rounded corners.
+        \n\nTo create a card with a shadow, use the <font fgcolor="#FFFFFFFF">android:elevation</font>
+        attribute.
+        \n\nTo set the corner radius in your layouts, use the <font fgcolor="#FFFFFFFF">card_view:cardCornerRadius</font> attribute.
+    </string>
+    <string name="cardview_radius_seekbar_text">Radius</string>
+    <string name="cardview_elevation_seekbar_text">Elevation</string>
+    <string name="btn_next" />
+</resources>
