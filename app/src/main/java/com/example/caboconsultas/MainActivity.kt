@@ -4,11 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import android.support.design.widget.Snackbar
 import com.example.caboconsultas.PreferenceHelper.get
 import com.example.caboconsultas.PreferenceHelper.set
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private val snackBar by lazy {
+        Snackbar.make(mainLayout,R.string.presiona_back_denuevo,Snackbar.LENGTH_SHORT)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
     private fun createSessionPreference() {
 //        PreferenceManager.getDefaultSharedPreferences()
 
@@ -52,5 +55,10 @@ class MainActivity : AppCompatActivity() {
         val preferences= PreferenceHelper.defaultPrefs(this)
         preferences["session"]= true
     }
-
+    override fun onBackPressed() {
+        if (snackBar.isShown)
+            super.onBackPressed()
+        else
+            snackBar.show()
+    }
 }
