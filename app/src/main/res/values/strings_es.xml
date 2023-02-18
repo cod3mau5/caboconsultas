@@ -32,4 +32,5 @@
     <string name="item_appointment_time">A las %1$s</string>
     <string name="label_mis_citas_medicas">Mis Citas Médicas</string>
     <string name="presiona_back_denuevo">Presione una vez mas para salir</string>
+    <string name="validar_descripcion_en_cita">La descripcion es demaciado corta</string>
 </resources>

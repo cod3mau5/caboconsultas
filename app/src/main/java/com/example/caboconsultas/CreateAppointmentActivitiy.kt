@@ -2,6 +2,7 @@ package com.example.caboconsultas
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ArrayAdapter
@@ -13,12 +14,20 @@ import java.util.*
 class CreateAppointmentActivitiy : AppCompatActivity() {
     private var selectedCalendar= Calendar.getInstance()
     private var selectedRadioButton: RadioButton? =null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_appointment_activitiy)
+
         btnNext.setOnClickListener {
-            cvStep1.visibility=View.GONE
-            cvStep2.visibility=View.VISIBLE
+            if(etDescription.text.toString().length < 4)
+                etDescription.error=getString(R.string.validar_descripcion_en_cita)
+            else{
+//                continue to step 2
+
+                cvStep1.visibility=View.GONE
+                cvStep2.visibility=View.VISIBLE
+            }
         }
         btnConfirmAppointment.setOnClickListener {
             finish()
@@ -85,4 +94,20 @@ class CreateAppointmentActivitiy : AppCompatActivity() {
         }
     }
     private fun Int.toDigits() = if(this>9) this.toString() else "0$this"
+    override fun onBackPressed() {
+        if(cvStep2.visibility == View.VISIBLE){
+            cvStep2.visibility=View.GONE
+            cvStep1.visibility=View.VISIBLE
+        }else if(cvStep1.visibility==View.VISIBLE){
+            val builder=AlertDialog.Builder(this)
+            builder.setTitle("Estás seguro que deseas salir?")
+            builder.setMessage("Si abandonas el registro, los datos que habias ingresado se perderan.")
+            builder.setPositiveButton("Si, salir"){ _, _ ->
+                finish()
+            }
+            builder.setNegativeButton("Continuar registro"){dialog,_->dialog.dismiss()}
+            val dialog=builder.create()
+            dialog.show()
+        }
+    }
 }
