@@ -1,10 +1,10 @@
-package com.example.caboconsultas
+package com.example.caboconsultas.ui
 
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.caboconsultas.R
 import com.example.caboconsultas.model.Appointment
 import kotlinx.android.synthetic.main.item_appointment.view.*
 

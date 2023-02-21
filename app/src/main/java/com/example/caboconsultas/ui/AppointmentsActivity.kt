@@ -1,8 +1,9 @@
-package com.example.caboconsultas
+package com.example.caboconsultas.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.example.caboconsultas.R
 import com.example.caboconsultas.model.Appointment
 import kotlinx.android.synthetic.main.activity_appointments.*
 
@@ -16,6 +17,6 @@ class AppointmentsActivity : AppCompatActivity() {
         appointments.add(Appointment(2,"Pepe Ramos","2023-02-16","9:00 PM"))
         appointments.add(Appointment(3,"Miguel Ramos","2023-02-15","1:00 PM"))
         rvAppointments.layoutManager= LinearLayoutManager(this)
-        rvAppointments.adapter=AppointmentAdapter(appointments)
+        rvAppointments.adapter= AppointmentAdapter(appointments)
     }
 }

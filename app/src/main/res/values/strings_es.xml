@@ -33,4 +33,9 @@
     <string name="label_mis_citas_medicas">Mis Citas Médicas</string>
     <string name="presiona_back_denuevo">Presione una vez mas para salir</string>
     <string name="validar_descripcion_en_cita">La descripcion es demaciado corta</string>
+    <string name="label_hora_de_la_cita">Hora de la cita</string>
+    <string name="label_titulo_confirmar_cita">Confirmar datos de la cita</string>
+    <string name="validar_fecha_de_cita">Es necesario seleccionar una fecha</string>
+    <string name="validar_hora_de_cita">Es necesario definir una hora para la cita.</string>
+    <string name="error_cargando_especialidades">Ocurrio un problema al cargar las especialidades.</string>
 </resources>

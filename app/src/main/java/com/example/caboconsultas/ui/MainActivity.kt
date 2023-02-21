@@ -1,17 +1,19 @@
-package com.example.caboconsultas
+package com.example.caboconsultas.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import android.support.design.widget.Snackbar
+import com.example.caboconsultas.PreferenceHelper
 import com.example.caboconsultas.PreferenceHelper.get
 import com.example.caboconsultas.PreferenceHelper.set
+import com.example.caboconsultas.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val snackBar by lazy {
-        Snackbar.make(mainLayout,R.string.presiona_back_denuevo,Snackbar.LENGTH_SHORT)
+        Snackbar.make(mainLayout, R.string.presiona_back_denuevo,Snackbar.LENGTH_SHORT)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         // Validate
 
         createSessionPreference()
-        val intent=Intent(this,MenuActivity::class.java)
+        val intent=Intent(this, MenuActivity::class.java)
         startActivity(intent)
         finish()
     }

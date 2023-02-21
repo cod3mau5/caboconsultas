@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.CreateAppointmentActivitiy"
+    android:id="@+id/cvStep1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/transparent"
+    android:visibility="visible">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.CardView
+            app:contentPadding="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/label_descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"/>
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+                <TextView
+                    android:text="@string/label_especialidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"/>
+                <Spinner
+                    android:id="@+id/spinnerSpecialty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_type"
+                    android:layout_marginTop="32dp"/>
+                <RadioGroup
+                    android:id="@+id/rgType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:checkedButton="@id/rbType1
+
+
+ ">
+
+                    <RadioButton
+                        android:id="@+id/rbType1"
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tipo_cita_1"/>
+                    <RadioButton
+                        android:id="@+id/rbType2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tipo_cita_2"/>
+                    <RadioButton
+                        android:id="@+id/rbType3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tipo_cita_3"/>
+                </RadioGroup>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <Button
+            android:id="@+id/btnNext"
+            android:text="@string/btn_siguiente"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+            style="@style/MenuButtonNoWeight"
+            android:layout_height="55dp"
+            />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
