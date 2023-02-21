@@ -38,4 +38,5 @@
     <string name="validar_fecha_de_cita">Es necesario seleccionar una fecha</string>
     <string name="validar_hora_de_cita">Es necesario definir una hora para la cita.</string>
     <string name="error_cargando_especialidades">Ocurrio un problema al cargar las especialidades.</string>
+    <string name="error_cargando_doctores">Ocurrio un problema al cargar los medicos.</string>
 </resources>
