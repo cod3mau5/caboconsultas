@@ -181,7 +181,7 @@ class CreateAppointmentActivitiy : AppCompatActivity() {
         val listener= DatePickerDialog.OnDateSetListener{ datePicker, y, m, d ->
             Toast.makeText(this, "$y-$m-$d", Toast.LENGTH_SHORT).show()
             selectedCalendar.set(y,m,d)
-            var m = m.toDigits()
+            var m = (m+1).toDigits()
             var d = d.toDigits()
             etScheduledDate.setText(resources.getString(R.string.date_format,y,m,d))
             etScheduledDate.error=null
