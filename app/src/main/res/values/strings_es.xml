@@ -39,4 +39,5 @@
     <string name="validar_hora_de_cita">Es necesario definir una hora para la cita.</string>
     <string name="error_cargando_especialidades">Ocurrio un problema al cargar las especialidades.</string>
     <string name="error_cargando_doctores">Ocurrio un problema al cargar los medicos.</string>
+    <string name="no_se_pudo_cargar_horas">No se han podido cargar las horas.</string>
 </resources>
