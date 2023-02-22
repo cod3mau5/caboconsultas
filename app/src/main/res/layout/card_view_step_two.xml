@@ -9,7 +9,8 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
     app:cardBackgroundColor="@color/transparent"
-    android:visibility="gone">
+    android:visibility="gone"
+    tools:visibility="visible">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,6 +57,29 @@
                         android:maxLines="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                    <!-- TEXT INFO SELECT DOCTOR AND DATE TO SEE AVAILABLE HOURS-->
+                    <TextView
+                        android:id="@+id/tvSelectDoctorAnDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/seleccione_medico_y_fecha_"
+                        android:textColor="@color/teal_700"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"/>
+                    <!-- TEXT ERROR NOT AVAILABLE HOURS-->
+                    <TextView
+                        android:id="@+id/notAvailableHours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_se_encontraron_horas_disponibles"
+                        android:textColor="@color/design_default_color_primary_dark"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:visibility="gone"/>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -68,15 +92,8 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="08:00 AM"/>
+``````````````````````````<!--RADIO BUTTONS AUTO FILLED BY THE APP HERE -->
 
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="08:00 AM"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/radioGroupRight"
@@ -86,15 +103,8 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="08:00 AM"/>
+                            <!--RADIO BUTTONS AUTO FILLED BY THE APP HERE -->
 
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="08:00 AM"/>
                         </LinearLayout>
                     </LinearLayout>
 

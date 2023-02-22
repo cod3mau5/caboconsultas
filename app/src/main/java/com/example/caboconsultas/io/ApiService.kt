@@ -1,5 +1,6 @@
 package com.example.caboconsultas.io
 
+import com.example.caboconsultas.io.response.LoginResponse
 import com.example.caboconsultas.model.Doctor
 import com.example.caboconsultas.model.Schedule
 import com.example.caboconsultas.model.Specialty
@@ -8,9 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiService {
     @GET("specialties")
@@ -22,6 +21,14 @@ interface ApiService {
     @GET("schedule/hours")
     fun getHours(@Query("doctor_id") doctorId: Int, @Query("date") date: String):
             Call<Schedule>
+
+    @POST("login")
+    fun postLogin(@Query("email") email: String, @Query("password") date: String):
+            Call<LoginResponse>
+
+    @POST("logout")
+    fun postLogout(@Header("Auhorization") authHeader: String):
+            Call<Void>
 
     companion object Factory {
         private const val BASE_URL="http://143.244.181.170/api/"

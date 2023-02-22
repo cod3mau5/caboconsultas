@@ -1,4 +1,4 @@
-package com.example.caboconsultas
+package com.example.caboconsultas.util
 
 import android.content.Context
 import android.content.SharedPreferences

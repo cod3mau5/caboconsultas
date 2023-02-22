@@ -40,4 +40,6 @@
     <string name="error_cargando_especialidades">Ocurrio un problema al cargar las especialidades.</string>
     <string name="error_cargando_doctores">Ocurrio un problema al cargar los medicos.</string>
     <string name="no_se_pudo_cargar_horas">No se han podido cargar las horas.</string>
+    <string name="seleccione_medico_y_fecha_">seleccione un medico y una fecha para ver sus horas disponibles</string>
+    <string name="no_se_encontraron_horas_disponibles">No se encontraron horas disponibles para el medico en el dia seleccionado.</string>
 </resources>
