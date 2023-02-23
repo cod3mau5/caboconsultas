@@ -1,6 +1,7 @@
 package com.example.caboconsultas.io
 
 import com.example.caboconsultas.io.response.LoginResponse
+import com.example.caboconsultas.model.Appointment
 import com.example.caboconsultas.model.Doctor
 import com.example.caboconsultas.model.Schedule
 import com.example.caboconsultas.model.Specialty
@@ -27,8 +28,11 @@ interface ApiService {
             Call<LoginResponse>
 
     @POST("logout")
-    fun postLogout(@Header("Auhorization") authHeader: String):
+    fun postLogout(@Header("Authorization") authHeader: String):
             Call<Void>
+
+    @GET("appointments")
+    fun getAppointments(@Header("Authorization") authHeader: String): Call<ArrayList<Appointment>>
 
     companion object Factory {
         private const val BASE_URL="http://143.244.181.170/api/"

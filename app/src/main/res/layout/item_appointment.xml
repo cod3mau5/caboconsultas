@@ -13,8 +13,7 @@
     tools:ignore="Autofill,LabelFor"
     app:cardElevation="4dp"
     app:cardCornerRadius="3dp"
-    tools:context=".ui.MenuActivity"
-    >
+    tools:context=".ui.MenuActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,5 +43,64 @@
             android:layout_height="wrap_content"
             tools:text="A las: 3:00 PM"
             android:gravity="center"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Confirmada."
+                android:layout_gravity="center"/>
+            <ImageButton
+                android:id="@+id/ibExpand"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_baseline_expand_more_24"
+                tools:src="@drawable/ic_baseline_expand_less_24"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                tools:ignore="ContentDescription"
+                android:layout_gravity="end"/>
+        </FrameLayout>
+        <LinearLayout
+            android:id="@+id/linearLayoutDetails"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <TextView
+                android:id="@+id/tvSpecialty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Ortopedia"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Consulta"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvCreatedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Esta se registro el dia: 2023-02-28 con la siguiente descripcion:"
+                android:gravity="center"
+                android:paddingTop="8dp"/>
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Me duele mucho el brazo."
+                android:gravity="center"
+                android:paddingBottom="16dp"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
