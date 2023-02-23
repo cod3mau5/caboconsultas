@@ -1,6 +1,10 @@
 package com.example.caboconsultas.ui
 
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.support.v7.widget.RecyclerView
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +16,7 @@ class AppointmentAdapter
     : RecyclerView.Adapter<AppointmentAdapter.ViewHolder>() {
     var appointments= ArrayList<Appointment>()
     class ViewHolder(itemView: View)  : RecyclerView.ViewHolder(itemView){
+        @RequiresApi(Build.VERSION_CODES.KITKAT)
         fun bind(appointment: Appointment)=
             with(itemView){
                 tvAppointmentId.text=context.getString(R.string.item_appointment_id,appointment.id)
@@ -25,6 +30,7 @@ class AppointmentAdapter
                 tvDescription.text=appointment.description
 
                 ibExpand.setOnClickListener{
+                    TransitionManager.beginDelayedTransition(parent as ViewGroup,AutoTransition())
                     if(linearLayoutDetails.visibility==View.VISIBLE){
                         linearLayoutDetails.visibility=View.GONE
                         ibExpand.setImageResource(R.drawable.ic_baseline_expand_more_24)
