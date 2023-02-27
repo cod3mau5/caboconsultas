@@ -1,6 +1,7 @@
 package com.example.caboconsultas.io
 
 import com.example.caboconsultas.io.response.LoginResponse
+import com.example.caboconsultas.io.response.SimpleResponse
 import com.example.caboconsultas.model.Appointment
 import com.example.caboconsultas.model.Doctor
 import com.example.caboconsultas.model.Schedule
@@ -33,6 +34,37 @@ interface ApiService {
 
     @GET("appointments")
     fun getAppointments(@Header("Authorization") authHeader: String): Call<ArrayList<Appointment>>
+/*
+
+    	'description',
+    	'specialty_id',
+    	'doctor_id',
+    	'patient_id',
+    	'scheduled_date',
+    	'scheduled_time',
+    	'type'
+ */
+    @POST("appointments")
+    @Headers("Accept: application/json")
+    fun storeAppointment(
+        @Header("Authorization") authHeader: String,
+        @Query("description") description: String,
+        @Query("specialty_id") specialtyId: Int,
+        @Query("doctor_id") doctorId: Int,
+        @Query("scheduled_date") scheduledDate: String,
+        @Query("scheduled_time") scheduleTime: String,
+        @Query("type") type: String
+    ): Call<SimpleResponse>
+
+    @POST("register")
+    @Headers("Accept: application/json")
+    fun postRegister(
+        @Query("name") name: String,
+        @Query("email") email: String,
+        @Query("password") password: String,
+        @Query("password_confirmation") passwordConfirmation: String,
+    ): Call<LoginResponse>
+
 
     companion object Factory {
         private const val BASE_URL="http://143.244.181.170/api/"

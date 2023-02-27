@@ -41,6 +41,7 @@
             android:layout_marginTop="9dp"/>
 
         <EditText
+            android:id="@+id/etRegisterName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="escribe tu correo electronico"
@@ -58,6 +59,7 @@
             android:layout_marginTop="9dp"/>
 
         <EditText
+            android:id="@+id/etRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="escribe tu correo electronico"
@@ -76,6 +78,26 @@
             android:layout_marginTop="9dp"/>
 
         <EditText
+            android:id="@+id/etRegisterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:autofillHints="escribe tu contraseña"
+            android:textColor="@color/teal_700"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmar_contraseña"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="9dp"/>
+
+        <EditText
+            android:id="@+id/etRegisterPasswordConfirmation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -84,6 +106,7 @@
             />
 
         <Button
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login_boton_registrar"

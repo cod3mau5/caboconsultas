@@ -14,9 +14,12 @@ import android.widget.RadioButton
 import android.widget.Toast
 import com.example.caboconsultas.R
 import com.example.caboconsultas.io.ApiService
+import com.example.caboconsultas.io.response.SimpleResponse
 import com.example.caboconsultas.model.Doctor
 import com.example.caboconsultas.model.Schedule
 import com.example.caboconsultas.model.Specialty
+import com.example.caboconsultas.util.PreferenceHelper
+import com.example.caboconsultas.util.PreferenceHelper.get
 import kotlinx.android.synthetic.main.activity_create_appointment_activitiy.*
 import kotlinx.android.synthetic.main.card_view_step_one.*
 import kotlinx.android.synthetic.main.card_view_step_three.*
@@ -26,7 +29,11 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
+
 class CreateAppointmentActivitiy : AppCompatActivity() {
+    private val preferences by lazy {
+        PreferenceHelper.defaultPrefs(this)
+    }
     private val apiService: ApiService by lazy {
         ApiService.create()
     }
@@ -65,13 +72,50 @@ class CreateAppointmentActivitiy : AppCompatActivity() {
             }
         }
         btnConfirmAppointment.setOnClickListener {
-            finish()
-            Toast.makeText(this, "Cita registrada correctamente", Toast.LENGTH_SHORT).show()
+            it.isClickable=false
+            performStoreAppointment()
+            it.isClickable=true
         }
 
         loadSpecialties()
         listenSpecialtyChanges()
         listenDoctorAndDateChanges()
+
+    }
+
+    private fun performStoreAppointment() {
+        val token= preferences["token",""]
+        val authHeader="Bearer $token"
+        val description= tvConfirmDescription.text.toString()
+        val specialty= spinnerSpecialty.selectedItem as Specialty
+        val doctor= spinnerDoctors.selectedItem as Doctor
+        val scheduledDate= tvConfirmDate.text.toString()
+        val scheduledTime= tvConfirmTime.text.toString()
+        val type= tvConfirmType.text.toString()
+
+        val call= apiService.storeAppointment(
+            authHeader, description,
+            specialty.id, doctor.id,
+            scheduledDate, scheduledTime,
+            type
+        )
+        call.enqueue(object: Callback<SimpleResponse>{
+            override fun onResponse(
+                call: Call<SimpleResponse>,
+                response: Response<SimpleResponse>
+            ) {
+                if (response.isSuccessful){
+                    toast("Cita registrada correctamente")
+                    finish()
+                }else{
+                    toast("Ocurrio un errror inesperado resgistrando la cita medica.")
+                }
+            }
+            override fun onFailure(call: Call<SimpleResponse>, t: Throwable) {
+                toast(t.localizedMessage)
+            }
+
+        })
 
     }
 
