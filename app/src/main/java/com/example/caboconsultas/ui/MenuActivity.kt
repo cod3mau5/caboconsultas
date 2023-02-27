@@ -2,7 +2,8 @@ package com.example.caboconsultas.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+//import android.support.v7.app.AppCompatActivity
 import com.example.caboconsultas.R
 import com.example.caboconsultas.io.ApiService
 import com.example.caboconsultas.util.PreferenceHelper

@@ -1,8 +1,9 @@
 package com.example.caboconsultas.ui
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+//import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.caboconsultas.R
 import com.example.caboconsultas.io.ApiService
 import com.example.caboconsultas.model.Appointment

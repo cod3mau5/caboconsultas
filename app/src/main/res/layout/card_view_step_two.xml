@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             app:contentPaddingTop="12dp"
             app:contentPaddingLeft="12dp"
             app:contentPaddingRight="12dp"
@@ -110,7 +110,7 @@
 
                 </LinearLayout>
             </ScrollView>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/btnNext2"
@@ -120,4 +120,4 @@
             android:layout_height="50dp"
             />
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

@@ -2,15 +2,17 @@ package com.example.caboconsultas.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+//import android.support.design.widget.Snackbar
+//import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.caboconsultas.R
 import com.example.caboconsultas.io.ApiService
 import com.example.caboconsultas.io.response.LoginResponse
 import com.example.caboconsultas.util.PreferenceHelper
 import com.example.caboconsultas.util.PreferenceHelper.get
 import com.example.caboconsultas.util.PreferenceHelper.set
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response

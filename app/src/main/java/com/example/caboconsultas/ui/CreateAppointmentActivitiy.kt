@@ -2,9 +2,9 @@ package com.example.caboconsultas.ui
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
+//import android.support.design.widget.Snackbar
+//import android.support.v7.app.AlertDialog
+//import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
@@ -12,6 +12,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.example.caboconsultas.R
 import com.example.caboconsultas.io.ApiService
 import com.example.caboconsultas.io.response.SimpleResponse
@@ -20,6 +22,7 @@ import com.example.caboconsultas.model.Schedule
 import com.example.caboconsultas.model.Specialty
 import com.example.caboconsultas.util.PreferenceHelper
 import com.example.caboconsultas.util.PreferenceHelper.get
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_create_appointment_activitiy.*
 import kotlinx.android.synthetic.main.card_view_step_one.*
 import kotlinx.android.synthetic.main.card_view_step_three.*
@@ -62,7 +65,7 @@ class CreateAppointmentActivitiy : AppCompatActivity() {
                 }
                 selectedTimeRadioButton == null -> {
                     Snackbar.make(createAppointmentLinearLayout,
-                        R.string.validar_hora_de_cita,Snackbar.LENGTH_SHORT).show()
+                        R.string.validar_hora_de_cita, Snackbar.LENGTH_SHORT).show()
                 }
                 else -> {
                     showAppointmentDataToConfirm()
@@ -304,7 +307,7 @@ class CreateAppointmentActivitiy : AppCompatActivity() {
                 cvStep1.visibility=View.VISIBLE
             }
             cvStep1.visibility==View.VISIBLE -> {
-                val builder=AlertDialog.Builder(this)
+                val builder= AlertDialog.Builder(this)
                 builder.setTitle("Estás seguro que deseas salir?")
                 builder.setMessage("Si abandonas el registro, los datos que habias ingresado se perderan.")
                 builder.setPositiveButton("Si, salir"){ _, _ ->

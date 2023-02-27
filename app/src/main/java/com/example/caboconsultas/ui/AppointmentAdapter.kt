@@ -1,13 +1,15 @@
 package com.example.caboconsultas.ui
 
 import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.v7.widget.RecyclerView
+//import android.support.annotation.RequiresApi
+//import android.support.v7.widget.RecyclerView
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.RecyclerView
 import com.example.caboconsultas.R
 import com.example.caboconsultas.model.Appointment
 import kotlinx.android.synthetic.main.item_appointment.view.*
