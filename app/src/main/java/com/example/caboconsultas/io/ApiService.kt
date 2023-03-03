@@ -2,10 +2,7 @@ package com.example.caboconsultas.io
 
 import com.example.caboconsultas.io.response.LoginResponse
 import com.example.caboconsultas.io.response.SimpleResponse
-import com.example.caboconsultas.model.Appointment
-import com.example.caboconsultas.model.Doctor
-import com.example.caboconsultas.model.Schedule
-import com.example.caboconsultas.model.Specialty
+import com.example.caboconsultas.model.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -14,6 +11,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 interface ApiService {
+
+    @GET("userinfo")
+    @Headers("Accept: application/json")
+    fun getUserInfo(@Header("Authorization") authHeader: String): Call<User>
+
+    @POST("userinfo")
+    @Headers("Accept: application/json")
+    fun postUserInfo(
+        @Header("Authorization") authHeader: String,
+        @Query("name") name: String,
+        @Query("phone") phone: String,
+        @Query("address") address: String
+    ): Call<Void>
+
     @GET("specialties")
     fun getSpecialties(): Call<ArrayList<Specialty>>
 
@@ -34,16 +45,7 @@ interface ApiService {
 
     @GET("appointments")
     fun getAppointments(@Header("Authorization") authHeader: String): Call<ArrayList<Appointment>>
-/*
 
-    	'description',
-    	'specialty_id',
-    	'doctor_id',
-    	'patient_id',
-    	'scheduled_date',
-    	'scheduled_time',
-    	'type'
- */
     @POST("appointments")
     @Headers("Accept: application/json")
     fun storeAppointment(
@@ -64,6 +66,12 @@ interface ApiService {
         @Query("password") password: String,
         @Query("password_confirmation") passwordConfirmation: String,
     ): Call<LoginResponse>
+
+    @POST("fcm/token")
+    fun storeToken(
+        @Header("Authorization") authHeader: String,
+        @Query("device_token") token: String
+    ): Call<Void>
 
 
     companion object Factory {

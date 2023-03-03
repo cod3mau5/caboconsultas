@@ -2,9 +2,6 @@ package com.example.caboconsultas.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-//import android.support.design.widget.Snackbar
-//import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.caboconsultas.R
@@ -13,9 +10,7 @@ import com.example.caboconsultas.io.response.LoginResponse
 import com.example.caboconsultas.util.PreferenceHelper
 import com.example.caboconsultas.util.PreferenceHelper.get
 import com.example.caboconsultas.util.PreferenceHelper.set
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response
@@ -30,22 +25,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            if (!task.isSuccessful) {
-                Log.w("FCMService", "Fetching FCM registration token failed", task.exception)
-                return@OnCompleteListener
-            }
-
-            // Get new FCM registration token
-            val token = task.result
-
-            // Log and toast
-            Log.d("FCMService", token)
-
-            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
-        })
 
 //        val preferences= getSharedPreferences("general", Context.MODE_PRIVATE)
 //        val session= preferences.getBoolean("session",false)
@@ -84,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                     if (loginResponse.success){
                         createSessionPreference(loginResponse.token)
                         toast("Bienvenido ${loginResponse.user.name}!")
-                        goToMenuActivity()
+                        goToMenuActivity(true)
                     }
                     if(!loginResponse.success){
                         toast("las credenciales son incorrectas.")
@@ -100,11 +79,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun goToMenuActivity(){
-        // Validate
-
-//        createSessionPreference()
+    private fun goToMenuActivity(isUserInput: Boolean = false){
+        // createSessionPreference()
         val intent=Intent(this, MenuActivity::class.java)
+        if (isUserInput){
+            intent.putExtra("store_token",true)
+        }
         startActivity(intent)
         finish()
     }

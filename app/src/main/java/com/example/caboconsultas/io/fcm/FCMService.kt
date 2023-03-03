@@ -10,12 +10,52 @@ import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.caboconsultas.R
+import com.example.caboconsultas.io.ApiService
 import com.example.caboconsultas.ui.MainActivity
+import com.example.caboconsultas.ui.toast
+import com.example.caboconsultas.util.PreferenceHelper
+import com.example.caboconsultas.util.PreferenceHelper.get
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class FCMService: FirebaseMessagingService() {
+    private val apiService by lazy {
+        ApiService.create()
+    }
+    private val preferences by lazy {
+        PreferenceHelper.defaultPrefs(this )
+    }
+    override fun onNewToken(deviceToken: String) {
+        super.onNewToken(deviceToken)
 
+        val token= preferences["token",""]
+        if (token.isEmpty())
+            return
+
+        val authHeader="Bearer $token"
+        // Store token
+        val call=apiService.storeToken(authHeader,deviceToken)
+        call.enqueue(object: Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if(response.isSuccessful){
+                    Log.d(TAG,"Token registrado correctamente.")
+                }else{
+                    Log.d(TAG,"Hubo un problema al registrar el token.")
+                }
+            }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                toast(t.localizedMessage)
+            }
+
+        })
+            // Log
+            Log.d("FCMService", token)
+
+
+    }
     /**
      * Called when message is received.
      *
@@ -41,10 +81,13 @@ class FCMService: FirebaseMessagingService() {
 
         // Check if message contains a notification payload.
         remoteMessage.notification.let {
+            val title=remoteMessage.notification?.title?:getString(R.string.app_name)
+            val body=remoteMessage.notification?.body
             Log.d(TAG, "Message Notification Body: " + remoteMessage.notification?.body)
+            if (body!=null)
+             sendNotification(title,body)
         }
 
-        // sendNotification()
     }
     // [END receive_message]
 
@@ -60,7 +103,7 @@ class FCMService: FirebaseMessagingService() {
      *
      * @param messageBody FCM message body received.
      */
-    private fun sendNotification(messageBody: String) {
+    private fun sendNotification(messageTitle: String,messageBody: String) {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(
@@ -72,7 +115,7 @@ class FCMService: FirebaseMessagingService() {
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_baseline_medical_services_24)
-            .setContentTitle("FCM Message")
+            .setContentTitle(messageTitle)
             .setContentText(messageBody)
             .setAutoCancel(true)
             .setSound(defaultSoundUri)

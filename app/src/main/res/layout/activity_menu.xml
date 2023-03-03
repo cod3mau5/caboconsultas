@@ -31,6 +31,12 @@
         android:orientation="vertical"
         android:padding="8dp">
 
+        <Button
+            android:id="@+id/btnProfile"
+            android:text="@string/menu_boton_editar_perfil"
+            android:drawableEnd="@drawable/ic_baseline_manage_accounts_24"
+            style="@style/MenuButton"
+            />
 
         <Button
             android:id="@+id/btnCreateAppointment"

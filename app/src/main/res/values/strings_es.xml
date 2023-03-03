@@ -44,4 +44,8 @@
     <string name="no_se_encontraron_horas_disponibles">No se encontraron horas disponibles para el medico en el dia seleccionado.</string>
     <string name="confirmar_contraseña">Confirmar contraseña</string>
     <string name="msg_token_fmt">___El Token es:</string>
+    <string name="menu_boton_editar_perfil">Editar mi perfil</string>
+    <string name="label_titulo_editar_perfil">Editar mis datos</string>
+    <string name="label_telefono">Numero de telefono</string>
+    <string name="label_direccion">Direccion</string>
 </resources>
