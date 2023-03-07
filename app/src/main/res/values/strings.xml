@@ -18,4 +18,5 @@
     <string name="cardview_elevation_seekbar_text">Elevation</string>
     <string name="btn_next" />
     <string name="default_notification_channel_id">default_channel</string>
+    <string name="prefs_file">com.example.caboconsultas.PREFERENCE_FILE_KEY</string>
 </resources>

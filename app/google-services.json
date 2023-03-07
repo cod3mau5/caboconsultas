@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "36399072725-maprlj47ltg08bfbjcv0nj1ah1fet4ov.apps.googleusercontent.com",
+          "client_id": "36399072725-sgdjrg9nlal03c1g1r73oisvb063csgt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.caboconsultas",
+            "certificate_hash": "ab91cac022f933a7373b153aca44bb98dd2cde10"
+          }
+        },
+        {
+          "client_id": "36399072725-4k3kihvgcioluua49f2s9m1d91m30def.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "36399072725-maprlj47ltg08bfbjcv0nj1ah1fet4ov.apps.googleusercontent.com",
+              "client_id": "36399072725-4k3kihvgcioluua49f2s9m1d91m30def.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

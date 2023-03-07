@@ -35,6 +35,7 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
         val storeToken=intent.getBooleanExtra("store_token",false)
         if (storeToken){
             storeToken()

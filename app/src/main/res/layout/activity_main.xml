@@ -26,20 +26,22 @@
         android:layout_marginBottom="30dp"
         android:textSize="20sp"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
             android:text="@string/label_correo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="9dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etEmail"
@@ -47,46 +49,72 @@
             android:layout_height="wrap_content"
             android:autofillHints="escribe tu correo electronico"
             android:inputType="textEmailAddress"
-            tools:ignore="LabelFor"
-            android:textColor="@color/teal_700"/>
+            android:textColor="@color/teal_700"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
             android:text="@string/contrase_a"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="9dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:autofillHints="escribe tu correo electronico"
-            android:textColor="@color/teal_700"
-            />
+            android:inputType="textPassword"
+            android:textColor="@color/teal_700" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login_boton_entrar"
-            android:background="@color/teal_700"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="17.2sp"
-            android:letterSpacing=".1"
             android:layout_marginTop="20dp"
+            android:background="@color/teal_700"
+            android:letterSpacing=".1"
+            android:text="@string/login_boton_entrar"
+            android:textColor="@color/white"
+            android:textSize="17.2sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Ingresar con redes sociales:" />
+
+        <Button
+            android:id="@+id/btnGoogleSignIn"
+            android:drawableStart="@drawable/google"
+            style="@style/MenuButton"
+            android:text="Google"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/cardview_dark_background"
             />
+
+        <Button
+            android:id="@+id/btnFacebookSignIn"
+            style="@style/MenuButton"
+            android:background="@color/cardview_dark_background"
+            android:drawableStart="@mipmap/login_facebook"
+            android:paddingLeft="1dp"
+            android:text="Facebook" />
+
         <TextView
             android:id="@+id/goToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:gravity="center"
-            android:text="@string/login_texto_no_registrado"
-            android:layout_marginTop="12dp"/>
+            android:text="@string/login_texto_no_registrado" />
     </LinearLayout>
+
 </LinearLayout>
