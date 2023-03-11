@@ -19,4 +19,11 @@
     <string name="btn_next" />
     <string name="default_notification_channel_id">default_channel</string>
     <string name="prefs_file">com.example.caboconsultas.PREFERENCE_FILE_KEY</string>
+
+
+    <string name="facebook_app_id">276496192164242134</string>
+    <string name="fb_login_protocol_scheme">fb276496192164242134</string>
+    <string name="facebook_client_token">e1ecacc06de01c328ceaedfc2c274c84</string>
+
+
 </resources>

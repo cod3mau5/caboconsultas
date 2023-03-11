@@ -100,13 +100,31 @@
             android:background="@color/cardview_dark_background"
             />
 
-        <Button
+<!--        <com.facebook.login.widget.LoginButton-->
+<!--            android:id="@+id/login_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:layout_marginBottom="30dp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnFacebookSignIn"-->
+<!--            style="@style/MenuButton"-->
+<!--            android:background="@color/cardview_dark_background"-->
+<!--            android:drawableStart="@mipmap/login_facebook"-->
+<!--            android:paddingLeft="1dp"-->
+<!--            android:text="Facebook" />-->
+
+        <com.facebook.login.widget.LoginButton
             android:id="@+id/btnFacebookSignIn"
-            style="@style/MenuButton"
-            android:background="@color/cardview_dark_background"
-            android:drawableStart="@mipmap/login_facebook"
-            android:paddingLeft="1dp"
-            android:text="Facebook" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"/>
 
         <TextView
             android:id="@+id/goToRegister"

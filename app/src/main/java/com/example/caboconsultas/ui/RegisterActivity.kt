@@ -70,7 +70,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                toast(t.localizedMessage)
+                t.localizedMessage?.let { toast(it) }
             }
         })
     }
